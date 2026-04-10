@@ -1,0 +1,95 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        -32
+      ],
+      "id": "779531d5-d55e-4524-8c11-0c26c9134786",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "sendTo": "muhammedtayyeb2002@gmail.com",
+        "subject": "hello",
+        "emailType": "text",
+        "message": "hello muhammed",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "fayez"
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        -16,
+        -32
+      ],
+      "id": "ce01d83b-502a-46f1-8cf1-02815f77fecf",
+      "name": "Send a message",
+      "webhookId": "0e1f0515-3d70-466a-97ed-11c5ab4a4f09",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "Z4pQmm5BcUlPcOjZ",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "content": "## EMAIL SENDER \n\nfirst project to send email\n"
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "typeVersion": 1,
+      "position": [
+        -192,
+        -224
+      ],
+      "id": "2f7925c8-7829-4689-a1c7-1095645efe0e",
+      "name": "Sticky Note"
+    }
+  ],
+  "pinData": {
+    "Send a message": [
+      {
+        "json": {
+          "id": "1ABC",
+          "threadId": "1ABC",
+          "labelIds": [
+            "SENT"
+          ]
+        }
+      }
+    ]
+  },
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate",
+    "availableInMCP": false
+  },
+  "versionId": "1d5de08b-e082-4bf4-bc64-0aef2de085a9",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "ea5a30d3ab2179f4d456c02d1635a4b60874c921fa079a9d8ea82af253a1327c"
+  },
+  "id": "G4W6iTDTZd5L0ciyBpqe4",
+  "tags": []
+}
